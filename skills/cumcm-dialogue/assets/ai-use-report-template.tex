@@ -1,0 +1,89 @@
+% !TEX program = xelatex
+% 通用待填写模板；具体工具、日期、参与范围和复核结论按真实日志填写。
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.3em}
+\pagestyle{plain}
+
+\newcommand{\field}[1]{\textcolor{gray}{【待填写：#1】}}
+\newcommand{\usagerecord}[6]{%
+  \par\medskip\noindent\textbf{#1}\par
+  \noindent\textbf{使用环节：}#2\par
+  \noindent\textbf{提示词或摘要：}#3\par
+  \noindent\textbf{关键回复摘要：}#4\par
+  \noindent\textbf{采纳与修改：}#5\par
+  \noindent\textbf{关联文件与核验：}#6\par
+}
+
+\begin{document}
+\begin{center}
+{\LARGE\bfseries AI 工具使用情况报告}\\[0.5em]
+{\small 通用待填写模板}
+\end{center}
+
+\noindent\textbf{项目/题目：}\field{本项目名称}\par
+\noindent\textbf{适用规则及年份：}\field{对应竞赛规则或项目要求}\par
+\noindent\textbf{报告日期：}\field{实际日期}\par
+
+\textcolor{gray}{填写提示：根据真实使用日志填写以下内容；未知信息标为未记录或待确认。
+此模板中的提示不是已发生的事实，定稿时请替换占位文字并删除本提示。}
+
+\begin{mdframed}[
+  linewidth=1pt,
+  linecolor=black,
+  innertopmargin=8pt,
+  innerbottommargin=8pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt
+]
+\noindent{\large\bfseries 一、工具信息}\par
+\noindent\textbf{工具名称：}\field{实际工具名称}\par
+\noindent\textbf{开发机构/服务商：}\field{实际信息}\par
+\noindent\textbf{型号/版本：}\field{有记录则填写，否则写未记录}\par
+\noindent\textbf{使用日期：}\field{实际日期范围}\par
+\noindent\textbf{使用方式与记录来源：}\field{实际使用方式和日志位置}\par
+\textcolor{gray}{若使用多种工具，按同样字段逐一列出。}\par
+
+\medskip
+\noindent{\large\bfseries 二、关键交互记录}\par
+
+\usagerecord{记录1：\field{实际记录标题}}
+  {\field{实际使用环节}}
+  {\field{实际提示内容，注明是否概述}}
+  {\field{实际建议或生成内容}}
+  {\field{采用范围、人工修改或拒绝情况}}
+  {\field{文件版本、实际检查与结果；未完成写待核验}}
+
+\usagerecord{记录2：\field{实际记录标题}}
+  {\field{实际使用环节}}
+  {\field{实际提示内容，注明是否概述}}
+  {\field{实际建议或生成内容}}
+  {\field{采用范围、人工修改或拒绝情况}}
+  {\field{文件版本、实际检查与结果；未完成写待核验}}
+
+\textcolor{gray}{按实际交互增删记录。代表性记录之外的实质用途仍在总体范围中说明。}\par
+
+\medskip
+\noindent{\large\bfseries 三、总体说明与责任}\par\nopagebreak[4]
+
+\noindent\textbf{（一）实际使用范围}\par
+\field{根据全部日志说明实际参与的题意理解、方案讨论、模型、推导检查、代码、数据、
+图表、文稿、排版或材料整理等环节；只列实际发生的用途。}\par
+
+\noindent\textbf{（二）团队决策、修改与核验}\par
+\field{按实际情况说明方案决定、对建议的修改、已经执行的核验及其结果；
+不要把尚未进行的复核写成已通过。}\par
+
+\noindent\textbf{（三）责任说明}\par
+\field{依据适用规则说明对最终论文、程序、数据和结果的责任；
+只有在真实记录支持时，才声明某项工作未使用 AI。}\par
+
+\noindent\textbf{（四）未记录或待确认事项}\par
+\field{列出型号、日期、交互来源或核验缺口；没有缺口时据实说明。}\par
+\end{mdframed}
+
+\end{document}

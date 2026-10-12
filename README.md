@@ -6,6 +6,23 @@
 
 本 skill 提炼自多次空气质量与微网问题的人机协作，重点记录了真实交互中容易遗漏的约定：哪些数据当时可用、公式和代码是否一致、图表是否先审核、官方模板能否修改、在线论文是否真的保存。公开内容均已匿名化。
 
+## 三份可直接使用的配套资料
+
+依据提供的 SOP、论文提示词和报告样式改写为通用版本，既可独立阅读，也由 skill 按当前阶段读取。
+
+| 资料 | 怎样使用 | 通用化内容 |
+|---|---|---|
+| [对话式数学建模全流程 SOP](skills/cumcm-dialogue/references/general-sop.md) | 从资料接收到终稿交付，逐阶段核对输入、操作、产出和验收 | 去除具体城市、固定四问、模型和结果；版式、颜色及平台改为项目配置 |
+| [AI 数学建模论文撰写提示词](skills/cumcm-dialogue/references/paper-writing-prompts.md) | 指导整篇写作或逐问扩写，可复制总提示词与分阶段提示词 | 保留“分析—建立—求解—结果—解释”，明确公式、算法、中间结果和正文输出 |
+| [AI 使用报告指南](skills/cumcm-dialogue/references/ai-use-report.md) | 将真实使用日志整理为报告，并按规定放入论文或支撑材料 | 保留“工具信息—交互记录—总体说明”的结构，工具、日期和采用范围据实填写 |
+
+报告同时提供 [Markdown 模板](skills/cumcm-dialogue/assets/ai-use-report-template.md)、[LaTeX 模板](skills/cumcm-dialogue/assets/ai-use-report-template.tex) 和 [使用日志模板](skills/cumcm-dialogue/assets/ai-usage-log.md)。样例中的工具型号、日期或“未使用 AI”声明不会预填为本项目事实。
+
+```text
+使用 $cumcm-dialogue 按通用 SOP 继续当前阶段；
+写论文时应用论文撰写提示词；最后依据真实日志填 AI 使用报告。
+```
+
 ## 1. Skill 是什么？它如何起作用？
 
 Skill 是给支持该机制的 AI 助手读取的一组任务说明文件。这里的入口是 [`SKILL.md`](skills/cumcm-dialogue/SKILL.md)，安装后可以通过 `$cumcm-dialogue` 调用。
@@ -146,12 +163,14 @@ skill 提供 [`project-state.md`](skills/cumcm-dialogue/assets/project-state.md)
 |---|---|
 | [`SKILL.md`](skills/cumcm-dialogue/SKILL.md) | 助手的入口说明、阶段路由和关键工作约定 |
 | [`references/`](skills/cumcm-dialogue/references/) | 题意数据、模型验证、论文图表、交付同步的详细指南 |
-| [`assets/`](skills/cumcm-dialogue/assets/) | 可复制到工程中的项目状态与单问任务约定模板 |
+| [`assets/`](skills/cumcm-dialogue/assets/) | 可复制到工程中的项目状态、单问任务约定、AI 使用日志和报告模板 |
 | [`agents/openai.yaml`](skills/cumcm-dialogue/agents/openai.yaml) | Codex 可选的 skill 名称、简述和默认调用提示 |
 | [`audit_official_xlsx.py`](skills/cumcm-dialogue/scripts/audit_official_xlsx.py) | 只读检查官方工作簿结构与单元格修改规则 |
 | [`tests/`](tests/) | 用合成工作簿验证审计脚本，不包含参赛附件 |
 
 阶段指南按当前任务读取，避免每轮加载全部内容。详细示例见[匿名对话案例](skills/cumcm-dialogue/references/dialogue-cases.md)。
+
+新增配套资料分别位于 `references/general-sop.md`、`references/paper-writing-prompts.md`、`references/ai-use-report.md`；报告与使用日志模板位于 `assets/`。它们包含在完整技能文件夹中，安装时一起保留。
 
 ## 10. 脚本使用与验证范围
 
@@ -171,6 +190,6 @@ python skills/cumcm-dialogue/scripts/audit_official_xlsx.py template.xlsx result
 
 ## 开源范围
 
-本仓库仅公开通用流程、匿名案例、模板与辅助脚本，不包含赛题原文、原始数据、参赛论文、个人信息或登录凭据。使用时按实际题设、当年竞赛规则和团队要求调整。
+本仓库仅公开通用流程、通用写作提示词、匿名案例、报告等模板与辅助脚本，不包含赛题原文、原始数据、参赛论文、个人信息或登录凭据。使用时按实际题设、当年竞赛规则和团队要求调整。
 
 采用 [MIT 许可证](LICENSE)。
