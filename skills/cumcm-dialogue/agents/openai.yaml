@@ -1,0 +1,4 @@
+interface:
+  display_name: "对话式国赛数学建模"
+  short_description: "从题意与附件审计到逐问建模、论文作图、官方模板和支撑材料交付"
+  default_prompt: "请使用 $cumcm-dialogue 读取赛题和已有工程，核对各问的信息边界与输出要求，从当前未完成阶段继续。"
